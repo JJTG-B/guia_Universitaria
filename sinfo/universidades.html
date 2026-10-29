@@ -1,0 +1,427 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Universidades - Guía Universitaria</title>
+
+    <link rel="stylesheet" href="universidades.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO Y MENÚ -->
+    <header class="encabezado">
+
+        <div class="logo">
+            <a href="index.html" class="logo">
+                <img src="Graduation cap.png" alt="Logo de Guía Universitaria" class="imagen-gorrito">
+                <span>Guía Universitaria</span>
+            </a>
+        </div>
+
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="boton-menu" aria-label="Abrir o cerrar menú">☰</label>
+
+        <nav class="menu">
+            <a href="index.html">Inicio</a>
+            <a href="universidades.html" class="activo">Universidades</a>
+            <a href="carreras.html">Carreras</a>
+            <a href="test.html">Test vocacional</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <!-- PRESENTACIÓN -->
+        <section class="encabezado-universidades">
+            <div class="contenido-universidades">
+                <p class="etiqueta">UNIVERSIDADES</p>
+
+                <h1>Conoce las universidades de El Alto</h1>
+
+                <p class="descripcion">
+                    Explora información sobre diferentes instituciones
+                    de educación superior, sus características,
+                    ubicación y áreas de formación.
+                </p>
+            </div>
+        </section>
+
+        <!-- BUSCADOR -->
+        <section class="seccion-buscador">
+            <input
+                type="text"
+                id="buscador"
+                placeholder="Buscar universidad..."
+                aria-label="Buscar universidad por nombre"
+                autocomplete="off"
+            >
+        </section>
+
+        <!-- LISTA DE UNIVERSIDADES -->
+        <section class="seccion-universidades">
+
+            <div id="listaUniversidades" class="contenedor-universidades">
+
+                <!-- UPEA -->
+                <article class="universidad-card" data-nombre="Universidad Pública de El Alto UPEA">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/edfUpea.jpg" alt="Edificio de la Universidad Pública de El Alto">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/upea.jpg" alt="Logo de la Universidad Pública de El Alto">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Pública de El Alto (UPEA)</h2>
+                        <span class="tipo">Pública y autónoma</span>
+
+                        <p>
+                            La Universidad Pública de El Alto (UPEA) es una
+                            universidad pública y autónoma ubicada en la zona
+                            Villa Esperanza, sobre la Av. Sucre A de la ciudad
+                            de El Alto. Cuenta con una amplia oferta académica
+                            en diferentes áreas del conocimiento, entre ellas
+                            ingeniería, tecnología, salud, educación, ciencias
+                            sociales y ciencias económicas. También desarrolla
+                            actividades de investigación, innovación e
+                            interacción social, orientadas a contribuir al
+                            desarrollo de la región y a la formación de
+                            profesionales con conocimientos científicos,
+                            tecnológicos y valores éticos.
+                        </p>
+
+                        <p class="direccion">📍 Villa Esperanza, Av. Sucre A</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Pública+de+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/upea.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- UNIFRANZ -->
+                <article class="universidad-card" data-nombre="Universidad Franz Tamayo UNIFRANZ">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/edfunifranz.png" alt="Edificio de la Universidad Franz Tamayo">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/unifranz.jpeg" alt="Logo de la Universidad Franz Tamayo">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Franz Tamayo (UNIFRANZ)</h2>
+                        <span class="tipo">Privada</span>
+
+                        <p>
+                            La Universidad Franz Tamayo (UNIFRANZ) es una
+                            institución privada que cuenta con una sede en la
+                            ciudad de El Alto. Su propuesta académica incorpora
+                            formación práctica, investigación, innovación y
+                            oportunidades de internacionalización. Ofrece
+                            programas relacionados con diferentes áreas
+                            profesionales, entre ellas salud, tecnología,
+                            negocios, diseño y ciencias sociales, brindando a
+                            los estudiantes espacios destinados al desarrollo
+                            de conocimientos y habilidades profesionales.
+                        </p>
+
+                        <p class="direccion">📍 Av. del Aeropuerto Internacional El Alto N.º 1015</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Franz+Tamayo+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/unifranz.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- UNITEPC -->
+                <article class="universidad-card" data-nombre="Universidad Técnica Privada Cosmos UNITEPC">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/edfUnitepc.png" alt="Edificio de la Universidad Técnica Privada Cosmos">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/unitepc.jpg" alt="Logo de UNITEPC">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Técnica Privada Cosmos (UNITEPC)</h2>
+                        <span class="tipo">Privada</span>
+
+                        <p>
+                            La Universidad Técnica Privada Cosmos (UNITEPC)
+                            es una institución privada con presencia en la
+                            ciudad de El Alto. Su oferta académica comprende
+                            diferentes áreas profesionales, especialmente
+                            relacionadas con salud, ingeniería, administración,
+                            derecho, comunicación y tecnología. La institución
+                            busca proporcionar una formación profesional que
+                            combine conocimientos teóricos y prácticos para
+                            preparar a los estudiantes para el ámbito laboral.
+                        </p>
+
+                        <p class="direccion">📍 Ciudad Satélite, Av. Satélite</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Técnica+Privada+Cosmos+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/unitepc.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- UUB -->
+                <article class="universidad-card" data-nombre="Universidad Unión Bolivariana UUB">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/edfUUB.png" alt="Edificio de la Universidad Unión Bolivariana">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/uub.png" alt="Logo de la Universidad Unión Bolivariana">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Unión Bolivariana (UUB)</h2>
+                        <span class="tipo">Privada</span>
+
+                        <p>
+                            La Universidad Unión Bolivariana (UUB) es una
+                            institución privada que ofrece formación
+                            profesional en diferentes áreas. Su presencia
+                            en la ciudad de El Alto permite a los estudiantes
+                            acceder a alternativas de educación superior
+                            dentro de la misma ciudad. Su oferta comprende
+                            áreas relacionadas con administración, contaduría,
+                            derecho, educación y ciencias sociales, entre
+                            otras disciplinas.
+                        </p>
+
+                        <p class="direccion">📍 El Alto – La Paz</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Unión+Bolivariana+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/uub.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- UCB -->
+                <article class="universidad-card" data-nombre="Universidad Católica Boliviana San Pablo UCB">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/catolicaedf.png" alt="Edificio de la Universidad Católica Boliviana">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/ucb.png" alt="Logo de la Universidad Católica Boliviana">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Católica Boliviana “San Pablo” (UCB)</h2>
+                        <span class="tipo">Privada por convenio</span>
+
+                        <p>
+                            La Universidad Católica Boliviana “San Pablo” (UCB)
+                            es una institución privada por convenio que forma
+                            parte del sistema universitario boliviano. Cuenta
+                            con unidades académicas vinculadas con diferentes
+                            áreas de formación y desarrolla actividades de
+                            investigación e interacción social. En el entorno
+                            de El Alto y La Paz, sus actividades pueden
+                            relacionarse con salud, desarrollo comunitario,
+                            producción, ciencias sociales y otras áreas
+                            profesionales.
+                        </p>
+
+                        <p class="direccion">📍 El Alto – La Paz</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Católica+Boliviana+San+Pablo+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/catolica.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- LA SALLE -->
+                <article class="universidad-card" data-nombre="Universidad La Salle">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/lasalle.png" alt="Edificio de la Universidad La Salle">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/la salle.png" alt="Logo de la Universidad La Salle">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad La Salle</h2>
+                        <span class="tipo">Privada</span>
+
+                        <p>
+                            La Universidad La Salle es una institución privada
+                            perteneciente a la Red Lasallista y cuenta con
+                            presencia en El Alto. Su propuesta educativa se
+                            basa en la formación profesional y humana,
+                            promoviendo valores y responsabilidad social.
+                            Sus áreas de formación están relacionadas con
+                            educación, administración, tecnología y otras
+                            disciplinas profesionales.
+                        </p>
+
+                        <p class="direccion">📍 Calle 9, El Alto – La Paz</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+La+Salle+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/lasalle.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- USFA -->
+                <article class="universidad-card" data-nombre="Universidad Privada San Francisco de Asís USFA">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/usfaedf.png" alt="Edificio de la Universidad Privada San Francisco de Asís">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/usfa.jpg" alt="Logo de la Universidad Privada San Francisco de Asís">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Privada San Francisco de Asís (USFA)</h2>
+                        <span class="tipo">Privada</span>
+
+                        <p>
+                            La Universidad Privada San Francisco de Asís
+                            (USFA) es una institución privada con presencia
+                            en la ciudad de El Alto. Su oferta académica
+                            comprende diferentes áreas de formación
+                            profesional, incluyendo ciencias jurídicas,
+                            económicas, administrativas y sociales. Su
+                            presencia permite que los estudiantes puedan
+                            acceder a opciones de educación superior dentro
+                            de la ciudad.
+                        </p>
+
+                        <p class="direccion">📍 Av. Jorge Carrasco, El Alto – La Paz</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Privada+San+Francisco+de+Asís+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/usfa.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+                <!-- UTB -->
+                <article class="universidad-card" data-nombre="Universidad Tecnológica Boliviana UTB">
+
+                    <div class="imagen-edificio">
+                        <img src="imagenes/utbedf.jpg" alt="Edificio de la Universidad Tecnológica Boliviana">
+                    </div>
+
+                    <div class="logo-universidad">
+                        <img src="imagenes/logoutb.jpg" alt="Logo de la Universidad Tecnológica Boliviana">
+                    </div>
+
+                    <div class="informacion-universidad">
+                        <h2>Universidad Tecnológica Boliviana (UTB)</h2>
+                        <span class="tipo">Privada</span>
+
+                        <p>
+                            La Universidad Tecnológica Boliviana (UTB) es una
+                            institución de educación superior privada que
+                            cuenta con presencia en la ciudad de El Alto.
+                            Su oferta académica comprende diferentes áreas
+                            de formación profesional, orientadas al desarrollo
+                            de conocimientos y capacidades para el ámbito
+                            laboral y profesional.
+                        </p>
+
+                        <p class="direccion">📍 El Alto, La Paz</p>
+
+                        <a href="https://www.google.com/maps/search/?api=1&query=Universidad+Tecnológica+Boliviana+El+Alto"
+                           target="_blank" rel="noopener noreferrer"
+                           class="boton-ubicacion">
+                            Ver ubicación en Google Maps
+                        </a>
+
+                        <a href="carreras/utb.html" class="boton-carreras">
+                            Ver carreras
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+
+            <p id="sin-resultados" role="status" hidden>
+                No se encontraron universidades.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <p>© 2026 Guía Universitaria</p>
+        <p>Proyecto de innovación tecnológica</p>
+        <p>Colegio Técnico Humanístico Juan José Torrez Gonzales “B”</p>
+        <p>El Alto – La Paz, Bolivia</p>
+    </footer>
+
+    <!-- FUNCIONALIDAD DEL BUSCADOR -->
+    <script src="universidades.js"></script>
+
+</body>
+</html>

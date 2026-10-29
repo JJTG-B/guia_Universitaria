@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Test vocacional para explorar intereses y carreras profesionales.">
+    <title>Test vocacional | Guía Universitaria</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="test.css">
+</head>
+
+<body>
+
+<header class="encabezado">
+
+    <a href="index.html" class="logo">
+        <img src="Graduation cap.png" alt="Logo de Guía Universitaria" class="imagen-gorrito">
+        <span>Guía Universitaria</span>
+    </a>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="boton-menu" aria-label="Abrir menú">☰</label>
+
+    <nav class="menu" aria-label="Navegación principal">
+        <a href="index.html">Inicio</a>
+        <a href="universidades.html">Universidades</a>
+        <a href="carreras.html">Carreras</a>
+        <a href="test.html" class="activo">Test vocacional</a>
+    </nav>
+
+</header>
+
+<section class="portada">
+    <span>ORIENTACIÓN VOCACIONAL</span>
+
+    <h1>Descubre tu camino profesional</h1>
+
+    <p>
+        Conoce las áreas profesionales que podrían relacionarse con tus
+        intereses, habilidades y preferencias. Responde con sinceridad
+        y descubre nuevas opciones para tu futuro.
+    </p>
+</section>
+
+<main class="contenedor">
+
+    <section class="panel-test" id="panelTest">
+
+        <div id="zonaPreguntas">
+
+            <div class="progreso-superior">
+                <span id="contadorPreguntas">Pregunta 1 de 50</span>
+                <span id="porcentajeProgreso">0% completado</span>
+            </div>
+
+            <div
+                class="barra-fondo"
+                id="barraContenedor"
+                role="progressbar"
+                aria-label="Progreso del test vocacional"
+                aria-valuemin="0"
+                aria-valuemax="50"
+                aria-valuenow="0">
+
+                <div class="barra-progreso" id="barraProgreso"></div>
+            </div>
+
+            <form id="quizForm">
+
+                <div class="pregunta" id="preguntaActual">
+                    <span class="numero-pregunta" id="numeroPregunta">
+                        PREGUNTA 01
+                    </span>
+
+                    <h2 id="textoPregunta">
+                        Cargando pregunta...
+                    </h2>
+
+                    <div class="opciones" id="opcionesPregunta">
+                        <!-- Las opciones se generan desde test.js -->
+                    </div>
+                </div>
+
+                <p class="mensaje" id="mensajePregunta" aria-live="polite"></p>
+
+                <div class="navegacion-preguntas">
+                    <button type="button" id="botonAnterior" class="boton-secundario" disabled>
+                        Anterior
+                    </button>
+
+                    <button type="button" id="botonSiguiente" class="boton-principal">
+                        Siguiente
+                    </button>
+                </div>
+
+            </form>
+
+            <p class="nota-test">
+                No hay respuestas correctas o incorrectas. Elige la opción
+                que mejor represente tus intereses.
+            </p>
+
+        </div>
+
+        <section id="resultado" class="resultado" hidden>
+
+            <span class="etiqueta-resultado">TUS RESULTADOS</span>
+
+            <h2>Estas son algunas opciones para explorar</h2>
+
+            <p class="descripcion-resultado">
+                Según tus respuestas, estas áreas y carreras podrían
+                relacionarse con tus intereses. Utiliza el resultado como
+                una orientación inicial para conocer más alternativas.
+            </p>
+
+            <div class="carrera-destacada">
+                <span class="subtitulo-resultado">ÁREA CON MAYOR AFINIDAD</span>
+
+                <h3 id="tituloCarrera"></h3>
+
+                <p id="descripcionCarrera"></p>
+
+                <div class="motivo-resultado">
+                    <h4>¿Qué indican tus respuestas?</h4>
+                    <p id="motivoCarrera"></p>
+                </div>
+            </div>
+
+            <h3 class="titulo-relacionadas">Otras áreas relacionadas</h3>
+
+            <div id="carrerasRelacionadas" class="carreras-relacionadas"></div>
+
+            <h3 class="titulo-universidades">
+                Universidades donde puedes explorar estas opciones
+            </h3>
+
+            <p class="texto-universidades">
+                Consulta la información de las universidades disponibles
+                en la guía y verifica qué carreras ofrece cada institución.
+            </p>
+
+            <div id="universidadesResultado" class="universidades-resultado"></div>
+
+            <div class="acciones-resultado">
+                <a href="universidades.html" class="boton-universidades">
+                    Explorar universidades
+                </a>
+
+                <button type="button" id="botonRepetir" class="boton-secundario">
+                    Repetir test
+                </button>
+            </div>
+
+            <p class="aviso-resultado">
+                Este test es una herramienta de orientación inicial.
+                No constituye un diagnóstico psicológico ni determina
+                de manera definitiva la carrera que debes estudiar.
+            </p>
+
+        </section>
+
+    </section>
+
+</main>
+
+<footer>
+    <p class="pie-titulo">Guía Universitaria</p>
+    <p>Información para orientar tu elección profesional.</p>
+</footer>
+
+<script src="test.js"></script>
+
+</body>
+</html>

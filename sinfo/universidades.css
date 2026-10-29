@@ -1,0 +1,713 @@
+/* ========================================
+   GUÍA UNIVERSITARIA — UNIVERSIDADES
+======================================== */
+
+/* CONFIGURACIÓN GENERAL */
+
+:root {
+    --azul: #25283D;
+    --azul-profundo: #1D2033;
+    --azul-medio: #343850;
+    --terracota: #C05C3F;
+    --terracota-oscuro: #A84932;
+    --durazno: #EAC4A8;
+    --crema: #F7EEE5;
+    --blanco: #FFFCF8;
+    --texto: #353548;
+    --texto-suave: #777486;
+    --borde: #E9DDD3;
+    --sombra: 0 12px 35px rgba(37, 40, 61, 0.08);
+    --radio: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "DM Sans", Arial, sans-serif;
+    background: var(--crema);
+    color: var(--texto);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button {
+    font: inherit;
+}
+
+/* ENCABEZADO Y MENÚ */
+
+.encabezado {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    width: 100%;
+    padding: 17px 7%;
+    background: var(--azul-profundo);
+    color: var(--blanco);
+    box-shadow: 0 4px 20px rgba(29, 32, 51, 0.14);
+}
+
+.encabezado .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    flex-shrink: 0;
+    color: var(--blanco);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: -0.035em;
+}
+
+.imagen-gorrito {
+    width: 37px;
+    height: 37px;
+    object-fit: contain;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 9px;
+}
+
+.menu a {
+    padding: 10px 14px;
+    border-radius: 7px;
+    color: rgba(255, 252, 248, 0.84);
+    font-size: 0.91rem;
+    font-weight: 500;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.menu a:hover,
+.menu a.activo {
+    background: rgba(234, 196, 168, 0.14);
+    color: var(--durazno);
+}
+
+#menu-toggle {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+}
+
+.boton-menu {
+    display: none;
+}
+
+/* PRESENTACIÓN DE UNIVERSIDADES */
+
+.encabezado-universidades {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: 85px 8%;
+    background: linear-gradient(
+        120deg,
+        #1D2033 0%,
+        #25283D 34%,
+        #59373C 59%,
+        #A84932 79%,
+        #EAC4A8 100%
+    );
+    color: var(--blanco);
+}
+
+.encabezado-universidades::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 45%;
+    right: -100px;
+    width: 350px;
+    height: 350px;
+    border: 1px solid rgba(255, 252, 248, 0.22);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 35px rgba(255, 252, 248, 0.045),
+        0 0 0 75px rgba(255, 252, 248, 0.035);
+    pointer-events: none;
+}
+
+.contenido-universidades {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.etiqueta {
+    display: inline-block;
+    margin: 0 0 18px;
+    color: var(--durazno);
+    font-size: 0.76rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+}
+
+.contenido-universidades h1 {
+    max-width: 800px;
+    margin: 0 0 22px;
+    color: var(--blanco);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: clamp(2.3rem, 5vw, 4.1rem);
+    font-weight: 700;
+    letter-spacing: -0.055em;
+    line-height: 1.12;
+}
+
+.descripcion {
+    max-width: 690px;
+    margin: 0;
+    color: rgba(255, 252, 248, 0.9);
+    font-size: 1.04rem;
+    line-height: 1.85;
+}
+
+/* BUSCADOR */
+
+.seccion-buscador {
+    padding: 38px 6% 10px;
+    background: var(--crema);
+    text-align: center;
+}
+
+#buscador {
+    display: block;
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 15px 18px;
+    border: 1px solid var(--borde);
+    border-radius: 7px;
+    outline: none;
+    background: var(--blanco);
+    color: var(--texto);
+    font-family: inherit;
+    font-size: 0.92rem;
+    box-shadow: 0 8px 25px rgba(37, 40, 61, 0.06);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#buscador::placeholder {
+    color: #9995A1;
+}
+
+#buscador:focus {
+    border-color: var(--terracota);
+    box-shadow: 0 0 0 3px rgba(192, 92, 63, 0.12);
+}
+
+/* SECCIÓN DE UNIVERSIDADES */
+
+.seccion-universidades {
+    width: 100%;
+    padding: 35px 6% 85px;
+    background: var(--crema);
+}
+
+.contenedor-universidades {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+    width: 100%;
+    max-width: 1180px;
+    margin: 25px auto 0;
+}
+
+/* TARJETAS DE UNIVERSIDADES */
+
+.universidad-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid rgba(192, 92, 63, 0.2);
+    border-radius: var(--radio);
+    background: linear-gradient(
+        145deg,
+        #FFFCF8 0%,
+        #F7EEE5 100%
+    );
+    box-shadow: 0 9px 28px rgba(37, 40, 61, 0.07);
+    transition:
+        transform 0.22s ease,
+        box-shadow 0.22s ease,
+        border-color 0.22s ease;
+}
+
+.universidad-card::before {
+    content: "";
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(
+        90deg,
+        #25283D 0%,
+        #713E3C 42%,
+        #C05C3F 72%,
+        #EAC4A8 100%
+    );
+}
+
+.universidad-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(192, 92, 63, 0.45);
+    box-shadow: 0 17px 36px rgba(37, 40, 61, 0.12);
+}
+
+/* IMAGEN DEL EDIFICIO */
+
+.imagen-edificio {
+    position: relative;
+    width: 100%;
+    height: 235px;
+    overflow: hidden;
+    background: var(--durazno);
+}
+
+.imagen-edificio img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+}
+
+.imagen-edificio::after {
+    content: "";
+    position: absolute;
+    inset: 55% 0 0;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(29, 32, 51, 0.22)
+    );
+    pointer-events: none;
+}
+
+.universidad-card:hover .imagen-edificio img {
+    transform: scale(1.035);
+}
+
+/* LOGOTIPO DE LA UNIVERSIDAD */
+
+.logo-universidad {
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    padding: 18px 24px;
+    background: var(--blanco);
+    border-bottom: 1px solid var(--borde);
+}
+
+.logo-universidad img {
+    display: block;
+    max-width: 165px;
+    max-height: 65px;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* INFORMACIÓN DE LA UNIVERSIDAD */
+
+.informacion-universidad {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: flex-start;
+    min-width: 0;
+    padding: 28px;
+}
+
+.informacion-universidad h2 {
+    margin: 0 0 15px;
+    color: var(--azul);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1.36rem;
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    line-height: 1.38;
+    overflow-wrap: anywhere;
+}
+
+.tipo {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    margin-bottom: 15px;
+    padding: 6px 11px;
+    border: 1px solid rgba(192, 92, 63, 0.23);
+    border-radius: 5px;
+    background: rgba(37, 40, 61, 0.08);
+    color: #713E3C;
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.5;
+    text-transform: uppercase;
+}
+
+.informacion-universidad p {
+    margin: 0 0 15px;
+    color: #59586A;
+    font-size: 0.92rem;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
+
+.informacion-universidad .direccion {
+    margin-top: auto;
+    padding-top: 5px;
+    color: var(--texto);
+    font-weight: 700;
+}
+
+/* BOTÓN DE UBICACIÓN Y BOTÓN DE CARRERAS */
+
+.boton-ubicacion,
+.boton-carreras {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 43px;
+    margin-top: 10px;
+    margin-right: 6px;
+    padding: 11px 16px;
+    border: 1px solid transparent;
+    border-radius: 7px;
+    text-align: center;
+    font-size: 0.83rem;
+    font-weight: 700;
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.boton-ubicacion {
+    border-color: var(--borde);
+    background: var(--blanco);
+    color: var(--azul);
+}
+
+.boton-ubicacion:hover {
+    transform: translateY(-2px);
+    border-color: var(--terracota);
+    background: var(--crema);
+    color: var(--terracota-oscuro);
+}
+
+.boton-carreras {
+    border-color: var(--terracota);
+    background: var(--terracota);
+    color: var(--blanco);
+}
+
+.boton-carreras:hover {
+    transform: translateY(-2px);
+    border-color: var(--terracota-oscuro);
+    background: var(--terracota-oscuro);
+}
+
+/* MENSAJE CUANDO NO HAY RESULTADOS */
+
+#sin-resultados {
+    max-width: 1180px;
+    margin: 24px auto 0;
+    padding: 42px 24px;
+    border: 1px dashed #D7B8A6;
+    border-radius: 12px;
+    background: rgba(255, 252, 248, 0.75);
+    color: var(--texto-suave);
+    text-align: center;
+}
+
+#sin-resultados[hidden] {
+    display: none;
+}
+
+/* PIE DE PÁGINA */
+
+footer {
+    margin-top: 0;
+    padding: 30px 7%;
+    border-top: 3px solid var(--terracota);
+    background: #171A2A;
+    color: rgba(255, 252, 248, 0.72);
+    text-align: center;
+}
+
+footer p {
+    margin: 6px 0;
+    font-size: 0.84rem;
+    line-height: 1.7;
+}
+
+footer p:first-child {
+    color: var(--blanco);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+footer a {
+    color: var(--durazno);
+}
+
+footer a:hover {
+    color: var(--blanco);
+}
+
+/* TABLETAS */
+
+@media (max-width: 900px) {
+    .encabezado {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .menu {
+        gap: 3px;
+    }
+
+    .menu a {
+        padding: 9px 10px;
+        font-size: 0.84rem;
+    }
+
+    .seccion-universidades {
+        padding-right: 5%;
+        padding-left: 5%;
+    }
+
+    .contenedor-universidades {
+        gap: 18px;
+    }
+
+    .informacion-universidad {
+        padding: 23px;
+    }
+}
+
+/* MENÚ MÓVIL Y CELULARES */
+
+@media (max-width: 700px) {
+    .encabezado {
+        min-height: 70px;
+        padding: 14px 5%;
+    }
+
+    .encabezado .logo {
+        font-size: 1.05rem;
+    }
+
+    .imagen-gorrito {
+        width: 32px;
+        height: 32px;
+    }
+
+    .boton-menu {
+        position: relative;
+        z-index: 1002;
+        display: block;
+        padding: 4px 10px;
+        border: 0;
+        border-radius: 8px;
+        background: rgba(255, 252, 248, 0.08);
+        color: var(--blanco);
+        font-size: 1.7rem;
+        line-height: 1.4;
+        cursor: pointer;
+    }
+
+    .menu {
+        position: absolute;
+        top: calc(100% + 8px);
+        right: 5%;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 5px;
+        width: min(270px, 90vw);
+        padding: 12px;
+        border: 1px solid rgba(234, 196, 168, 0.18);
+        border-radius: 12px;
+        background: linear-gradient(
+            145deg,
+            #1D2033,
+            #343047 65%,
+            #713E3C
+        );
+        box-shadow: 0 15px 35px rgba(29, 32, 51, 0.24);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(-8px);
+        transition:
+            opacity 0.2s ease,
+            visibility 0.2s ease,
+            transform 0.2s ease;
+    }
+
+    #menu-toggle:checked ~ .menu {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateY(0);
+    }
+
+    .menu a {
+        display: block;
+        padding: 12px 14px;
+        border-radius: 7px;
+        color: var(--blanco);
+        font-size: 0.92rem;
+    }
+
+    .menu a:hover,
+    .menu a.activo {
+        background: rgba(234, 196, 168, 0.12);
+        color: var(--durazno);
+    }
+
+    .encabezado-universidades {
+        padding: 65px 7%;
+        background: linear-gradient(
+            140deg,
+            #1D2033 0%,
+            #343047 38%,
+            #8A443C 72%,
+            #EAC4A8 115%
+        );
+    }
+
+    .contenido-universidades h1 {
+        font-size: clamp(2.1rem, 8vw, 3.2rem);
+    }
+
+    .descripcion {
+        font-size: 0.96rem;
+    }
+
+    .seccion-buscador {
+        padding: 30px 5% 8px;
+    }
+
+    .seccion-universidades {
+        padding: 30px 5% 60px;
+    }
+
+    .contenedor-universidades {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+    }
+
+    .imagen-edificio {
+        height: 220px;
+    }
+
+    .informacion-universidad {
+        padding: 24px;
+    }
+}
+
+/* CELULARES PEQUEÑOS */
+
+@media (max-width: 360px) {
+    .encabezado .logo {
+        gap: 7px;
+        font-size: 0.94rem;
+    }
+
+    .imagen-gorrito {
+        width: 28px;
+        height: 28px;
+    }
+
+    .encabezado-universidades {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .contenido-universidades h1 {
+        font-size: 2rem;
+    }
+
+    .seccion-universidades {
+        padding-right: 4%;
+        padding-left: 4%;
+    }
+
+    .imagen-edificio {
+        height: 190px;
+    }
+
+    .logo-universidad {
+        min-height: 78px;
+        padding: 15px 20px;
+    }
+
+    .logo-universidad img {
+        max-width: 145px;
+        max-height: 55px;
+    }
+
+    .informacion-universidad {
+        padding: 20px;
+    }
+
+    .boton-ubicacion,
+    .boton-carreras {
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
